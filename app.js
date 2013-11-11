@@ -5,9 +5,11 @@
 
 var express = require('express')
   , routes = require('./routes')
-  , user = require('./routes/user')
   , http = require('http')
   , path = require('path');
+
+var docroot = '/node';
+exports.docroot = docroot;
 
 var app = express();
 
@@ -28,11 +30,11 @@ if ('development' == app.get('env')) {
 }
 
 // GET /
-app.get('/', routes.index);
+app.get(docroot + '/', routes.index);
 
 // GET /mobile
-app.get('/mobile/:id?', routes.mobile.page)
-app.get('/mobile', routes.mobile.index);
+app.get(docroot + '/mobile/:id?', routes.mobile.page)
+app.get(docroot + '/mobile', routes.mobile.index);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
