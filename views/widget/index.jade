@@ -1,0 +1,11 @@
+extends ./layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  ul(id="widget menu")
+  for widget in widgets
+    li
+      a(href="#{widget.url}") #{widget.url}
+  p
+    a(href="/") Return

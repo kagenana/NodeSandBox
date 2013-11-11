@@ -1,9 +1,33 @@
-extends ../layout
+extends ./layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  ul(id="mobile menu")
-  for mobile in mobiles
-    li
-      a(href="#{mobile.url}") #{mobile.url}
+  section(id="index", data-role="page")
+    header(data-role="header", data-position="fixed")
+      a(href="/") TOP
+      h6 NodeSandBOX
+      a.ui-btn-right(href="/mobile/logout") LOGOUT
+    article(data-role="content")
+      h3 Welcome to #{title}
+      ul Index
+        li
+          a(href="#page1") Page 1
+        li
+          a(href="#page2") Page 2
+    footer(data-role="footer", data-position="fixed")
+      h6 　
+      a.ui-btn-right(href="/mobile/config") CONFIG
+
+  section(id="page1", data-role="page")
+    article(id="index", data-role="content")
+      h3 Welcome to #{title}
+      p Page 1
+      a(href="#index") Return
+
+  section(id="page2", data-role="page")
+    article(id="index", data-role="content")
+      h3 Welcome to #{title}
+      p Page 2
+      a(href="#index") Return
+
+  p
+    a(href="/") Return

@@ -8,3 +8,4 @@ exports.index = function(req, res){
 };
 
 exports.mobile = require('./mobile');
+exports.widget = require('./widget');

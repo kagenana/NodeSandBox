@@ -1,7 +1,6 @@
 /**
  * New node file
  */
-
 var mobiles = [
   { url: '/mobile?id=1', name: 'Mobile Page 1'},
   { url: '/mobile?id=2', name: 'Mobile Page 2'},
@@ -29,7 +28,7 @@ exports.page = function(req, res, next) {
     return next();
   }
   res.render('mobile/page', {
-    title: mobiles[id - 1].name,
+    title: mobile[id - 1].name,
     id: id,
     posts: dummy_posts
   });
