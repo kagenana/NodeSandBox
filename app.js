@@ -8,9 +8,6 @@ var express = require('express')
   , http = require('http')
   , path = require('path');
 
-var docroot = '/node';
-exports.docroot = docroot;
-
 var app = express();
 
 // all environments
@@ -30,11 +27,11 @@ if ('development' == app.get('env')) {
 }
 
 // GET /
-app.get(docroot + '/', routes.index);
+app.get('/', routes.index);
 
 // GET /mobile
-app.get(docroot + '/mobile/:id?', routes.mobile.page)
-app.get(docroot + '/mobile', routes.mobile.index);
+app.get('/mobile/:id?', routes.mobile.page)
+app.get('/mobile', routes.mobile.index);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
