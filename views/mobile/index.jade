@@ -2,32 +2,68 @@ extends ./layout
 
 block content
   section(id="index", data-role="page")
-    header(data-role="header", data-position="fixed")
+    header(data-role="header")
       a(href="/") TOP
       h6 NodeSandBOX
       a.ui-btn-right(href="/mobile/logout") LOGOUT
-    article(data-role="content")
-      h3 Welcome to #{title}
-      ul Index
+    article(data-role="contents", style="padding-left: 20px; padding-right: 20px;")
+      h3 iQuery Mobile 実験ページ
+      ul(data-role="listview", data-divider-theme="e", data-inset="true")
+        li(data-role="list-divider") メニュー
         li
-          a(href="#page1") Page 1
+          a(href="#page1", data-transition="slide") 同一ページセクション１
         li
-          a(href="#page2") Page 2
-    footer(data-role="footer", data-position="fixed")
+          a(href="#page2", data-transition="flip") 同一ページセクション２
+        li
+          a(href="#page3", data-transition="fade") 同一ページセクション３
+          
+      ul(style="padding-top: 10px;")
+        li 上記メニューに実験内容を追加していきます。
+        li メニュー外をタップするとフッタをon/offすることが出来ます。
+      
+    footer(data-role="footer", data-id="footer-menu", data-position="fixed", data-fullscreen="true")
       h6 　
-      a.ui-btn-right(href="/mobile/config") CONFIG
+      a.ui-btn-right(href="/mobile/config", data-icon="gear") 設定
 
-  section(id="page1", data-role="page")
-    article(id="index", data-role="content")
-      h3 Welcome to #{title}
-      p Page 1
-      a(href="#index") Return
+  section(id="page1", data-role="page", data-add-back-btn="true", data-add-back-btn-text="戻る")
+    header(data-role="header")
+      h6 NodeSandBOX
+    article(data-role="contents", style="padding-left: 20px; padding-right: 20px;")
+      h3 同一ページセクション１
+      ul
+        li メニューと同一のhtmlファイルに存在する２ページ目です。
+        li セクションレベルで「戻る」機能を実装しています。
+        li フッタは共通のため、アニメーションしないようにしています。
+        li ページ遷移時にスライドするバージョンです。
+    footer(data-role="footer", data-id="footer-menu", data-position="fixed", data-fullscreen="true")
+      h6 　
+      a.ui-btn-right(href="/mobile/config", data-icon="gear") 設定
 
-  section(id="page2", data-role="page")
-    article(id="index", data-role="content")
-      h3 Welcome to #{title}
-      p Page 2
-      a(href="#index") Return
+  section(id="page2", data-role="page", data-add-back-btn="true", data-add-back-btn-text="戻る")
+    header(data-role="header")
+      h6 NodeSandBOX
+    article(data-role="contents", style="padding-left: 20px; padding-right: 20px;")
+      h3 同一ページセクション２
+      ul
+        li メニューと同一のhtmlファイルに存在する３ページ目です。
+        li セクションレベルで「戻る」機能を実装しています。
+        li フッタは共通のため、アニメーションしないようにしています。
+        li ページ遷移時にフリップするバージョンです。
+    footer(data-role="footer", data-id="footer-menu", data-position="fixed", data-fullscreen="true")
+      h6 　
+      a.ui-btn-right(href="/mobile/config", data-icon="gear") 設定
 
-  p
-    a(href="/") Return
+  section(id="page3", data-role="page", data-add-back-btn="true", data-add-back-btn-text="戻る")
+    header(data-role="header")
+      h6 NodeSandBOX
+    article(data-role="contents", style="padding-left: 20px; padding-right: 20px;")
+      h3 同一ページセクション３
+      ul
+        li メニューと同一のhtmlファイルに存在する４ページ目です。
+        li セクションレベルで「戻る」機能を実装しています。
+        li フッタは共通のため、アニメーションしないようにしています。
+        li ページ遷移時にフェードするバージョンです。
+    footer(data-role="footer", data-id="footer-menu", data-position="fixed", data-fullscreen="true")
+      h6 　
+      a.ui-btn-right(href="/mobile/config", data-icon="gear") 設定
+ 
